@@ -9,15 +9,15 @@ class Node:
 
 def has_Cycle(head):      #this is called slowfast approach,  it is a modification of slow fast approach to find ,idpoint, we extend  and see that when  slow= fast there is a cyclepresent
     if not head or not head.next:
-        return False
+        return False  #if only head is present or the LL is empty
     
     slow = head
     fast = head.next
     while slow!=fast:
         if not fast or not fast.next:
-            return False
-        slow = slow.next
-        fast = fast.next.next
+            return False  
+        slow = slow.next   #slow moves one node at a time
+        fast = fast.next.next  # fast moves two nodes at a time 
     return True
 
 node1 = Node(1)
